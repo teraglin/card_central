@@ -1,0 +1,39 @@
+<header>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
+    <div class="container-fluid">
+      <%# <a class="navbar-brand" href="#">Expand at sm</a> %>
+      <%= link_to 'Card Central', listings_path, class: 'nav-link active' %>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample03">
+        <ul class="navbar-nav me-auto mb-2 mb-sm-0">
+          <li class="nav-item">
+            <%= link_to 'Create Listing', listings_path, class: 'nav-link active' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to 'Create Listing', new_listing_path, class: 'nav-link active' %>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <% if user_signed_in? %>
+                <%= link_to "Sign Out", destroy_user_session_path, method: :destroy %>
+              <% else %>
+                <%= link_to "Sign In", user_session_path, method: :create %>
+              <% end %>
+            </a>
+          </li>
+        </ul>
+        <%# bring this back in later  %>
+        <%# <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form> %>
+      </div>
+    </div>
+  </nav>
+</header>
+
