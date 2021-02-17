@@ -2,11 +2,15 @@ require 'rails_helper'
 
 RSpec.describe "listings/new", type: :view do
   before(:each) do
+
+    before(:each) do
+
     assign(:listing, Listing.new(
       title: "MyString",
       description: "MyText",
       price: 1,
-      sold: false
+      sold: false,
+      user: new_user
     ))
   end
 
